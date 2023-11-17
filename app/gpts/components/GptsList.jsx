@@ -84,7 +84,7 @@ export const GPTsList = ({
                     )}
                   </div>
                 </div>
-                <a className="btn bg-sky-700 w-full rounded-none text-white">Open</a>
+                <a href={item.gptLink} target="_blank" className="btn bg-sky-700 w-full rounded-none text-white">Open</a>
               </div>
             )
           })

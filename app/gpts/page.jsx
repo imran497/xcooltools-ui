@@ -33,7 +33,7 @@ const Gpts = () => {
 
       <div className="mx-2">
         <div className="flex justify-between items-center my-6">
-          <h3 className="text-lg">GPTs Directory</h3>
+          <h3 className="text-lg">GPTs Directory {gptsData?.length ? <>({gptsData?.length} GPTs)</> : null}</h3>
           <button className="btn btn-active btn-accent" onClick={() => setShowAddModal(true)}>Add GPT</button>
         </div>
         {
