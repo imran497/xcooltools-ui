@@ -31,19 +31,21 @@ const Gpts = () => {
         </div>
       </div> */}
 
-      <div className="flex justify-between items-center my-6">
-        <h3 className="text-lg">GPTs Directory</h3>
-        <button className="btn btn-active btn-accent" onClick={() => setShowAddModal(true)}>Add GPT</button>
+      <div className="mx-2">
+        <div className="flex justify-between items-center my-6">
+          <h3 className="text-lg">GPTs Directory</h3>
+          <button className="btn btn-active btn-accent" onClick={() => setShowAddModal(true)}>Add GPT</button>
+        </div>
+        {
+          isLoading
+          ? (
+            <div class="flex justify-center items-center h-screen">
+              <div class="animate-spin rounded-full h-32 w-32 border-b-2 border-slate-900"></div>
+            </div>
+          )
+          : <GPTsList gptsList={gptsData} />
+        }
       </div>
-      {
-        isLoading
-        ? (
-          <div class="flex justify-center items-center h-screen">
-            <div class="animate-spin rounded-full h-32 w-32 border-b-2 border-slate-900"></div>
-          </div>
-        )
-        : <GPTsList gptsList={gptsData} />
-      }
 
       <AddGptModal showAddModal={showAddModal} closeModal={() => setShowAddModal(false)}/>
     </div>
